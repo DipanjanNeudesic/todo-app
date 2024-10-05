@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import useStore from '@/stores/store';
 import { Box, Button, Dialog, TextField } from '@mui/material';
+import useStore from '../../stores/store';
+
 
 const style = {
     position: 'fixed',
@@ -20,7 +21,7 @@ const style = {
 
 function EditToDo({openEdit, setOpenEdit, position}) {
     const [toDoItem, setToDoItem] = React.useState('');
-    const editToDoItems = useStore("editToDoItems");
+    const editToDoItems = useStore((state) => state.editToDoItems);
 
     const handleClose = () => {
         editToDoItems(toDoItem, position);

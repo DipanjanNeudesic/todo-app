@@ -2,7 +2,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Box, Button, Dialog, TextField } from '@mui/material'
-import useStore from '@/stores/store';
+import useStore from '../../stores/store';
+
 
 
 const style = {
@@ -22,7 +23,7 @@ const style = {
 
 function AddToDo({open, setOpen, position}) {
     const [toDoItem, setToDoItem] = React.useState('');
-    const addToDoItems = useStore("addToDoItems");
+    const addToDoItems = useStore((state) => state.addToDoItems);
 
     const handleClose = () => {
         addToDoItems(toDoItem, position);

@@ -3,5 +3,13 @@
     "@typescript-eslint/no-explicit-any": "off",
     "no-unused-vars": "off"
   },
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "overrides": [
+    {
+      "files": ["tests/**/*"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }
